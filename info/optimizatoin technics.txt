@@ -1,0 +1,4 @@
+
+profiling (see the hot spots, where the cpu spends most of the time so you know what to optimize)
+
+big O notation (it shows the complexity of your function)
