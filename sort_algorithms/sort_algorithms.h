@@ -9,4 +9,6 @@ void quicksort(int arr[],int low ,int high);
 
 void bubblesort(int arr[],int size);
 
+void selectionsort(int arr[],int size);
+
 #endif

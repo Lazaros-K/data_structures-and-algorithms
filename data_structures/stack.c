@@ -12,7 +12,7 @@ bool st_init(st* st,int n) {
     st->top = NULL;
     return false;
   }
-  st->top = st->data;
+  st->top = NULL;
   st->size = n;
   return true;
 }
@@ -40,10 +40,11 @@ bool st_push(st* st, int data) {
 }
 
 bool st_pop(st* st) {
-  if(st->length <= 0) { return false; }
+  if(st->length-1 < 0) { return false; }
   
   (st->length)--;
-  st->top = &(st->data[st->length-1]);
+  if(st->length == 0) { st->top = NULL; }
+  else { st->top = &(st->data[st->length-1]); }
   return true;
 }
 

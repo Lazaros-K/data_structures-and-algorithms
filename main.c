@@ -19,5 +19,9 @@ int main() {
     // tests_queue();
     // tests_stack();
 
+    int arr[9] = {8,3,2,15,1,5,6,7,17};
+    selectionsort(arr,9);
+    printarr(arr,9);
+
     return 0;
 }

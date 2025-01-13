@@ -110,13 +110,7 @@ sllnode* sll_remove_node_tail(sll* list) {
 
 sllnode* sll_remove_node_head(sll* list) {
     if(sll_empty(*list)) {return NULL; }
-        
-    if((*list)->next == NULL) {
-        free (*list);
-        (*list) = NULL;
-        return *list;
-    }
-
+    
     sllnode* tmp = (*list)->next;
     free(*list);
     (*list) = tmp;
@@ -125,7 +119,6 @@ sllnode* sll_remove_node_head(sll* list) {
 }
 
 sllnode* sll_remove_node(sll* list,int index) {
-    if(sll_empty(*list)) {return NULL; }
 
     if(index == 0) {
         return sll_remove_node_head(list);

@@ -59,3 +59,19 @@ void quicksort(int arr[],int low ,int high) {
         quicksort(arr, pi+1, high);
     }
 }
+
+int findmin(int arr[],int low,int high) {
+    int min_i = low;
+    for (int i = low+1; i <= high; i++)
+    {
+        if(arr[i] < arr[min_i]) { min_i = i; }
+    }
+    return min_i;
+}
+
+void selectionsort(int arr[],int n) {
+    for (int i = 0; i < n-1; i++)
+    {
+        swap(&arr[i],&arr[findmin(arr,i,n-1)]);
+    }
+}
