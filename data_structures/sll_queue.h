@@ -6,7 +6,7 @@
 #include "sll_plus.h"
 
 /**
- * Single Linked List based Queue object
+ * Single Linked List Plus based Queue object
  * @head = pointer to first element
  * @tail = pointer to last element
  * @length = the number of elements

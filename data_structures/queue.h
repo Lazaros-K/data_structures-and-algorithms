@@ -5,16 +5,12 @@
 #include <stdlib.h>
 
 typedef struct qu_ {
-    int* data;
+    int* head;
     int length;
     int size;
 } qu;
 
-static inline void qu_init(qu* queue, int n) {
-    queue->data = (int*) malloc(sizeof(int) * n);
-    queue->length = 0;
-    queue->size = n;
-}
+bool qu_init(qu* queue, int n);
 
   //---------------------//
  //      FUNCTIONS      //
@@ -23,7 +19,7 @@ static inline void qu_init(qu* queue, int n) {
 inline static int qu_length(qu q) { return q.length; }
 inline static int qu_size(qu q) { return q.size; }
 inline static bool qu_empty(qu q) { return q.length == 0; }
-inline static int qu_peek(qu q) { return (qu_empty(q)) ? false : q.data[0] ; }
+inline static int qu_peek(qu q) { return (qu_empty(q)) ? false : q.head[0] ; }
 
 void qu_print(qu queue);
 

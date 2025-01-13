@@ -7,6 +7,7 @@ The repository includes structs and corresponding functions for:
   sllst : single linked list based stack
   
   qu : array based queue
+  st : array based stack
 
   bubble sort
   quick sort

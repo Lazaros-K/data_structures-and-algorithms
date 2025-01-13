@@ -8,5 +8,6 @@ bool tests_sllqu();
 bool tests_sllst();
 bool tests_shorting();
 bool tests_queue();
+bool tests_stack();
 
 #endif

@@ -5,6 +5,7 @@
 #include "sll_stack.h"
 #include "sll_queue.h"
 #include "queue.h"
+#include "stack.h"
 #include "../tools/functions.h"
 #include "../search_algorithms/search_algorithms.h"
 #include "../sort_algorithms/sort_algorithms.h"
@@ -125,7 +126,7 @@ bool tests_queue() {
 
     for (int i = 0; i < 5; i++)
     {
-        printf("%d\n",queue.data[i]);
+        printf("%d\n",queue.head[i]);
     }
     
     
@@ -144,6 +145,55 @@ bool tests_queue() {
     qu_dequeue(&queue);
 
     qu_print(queue);
+
+    qu queue2;
+    qu_init(&queue2,10);
+    qu_enqueue(&queue2,8);
+    qu_enqueue(&queue2,7);
+    qu_enqueue(&queue2,4);
+    qu_enqueue(&queue2,19);
+    qu_enqueue(&queue2,2);
+    qu_enqueue(&queue2,5);
+
+    quicksort(queue2.head,0,queue2.length-1);
+    printarr(queue2.head,queue2.length);
+
+    int n;
+    printf("Select a number: ");
+    scanf("%d",&n);
+    printf("The index of %d is: %d\n",n,arr_binary_search(queue2.head,qu_length(queue),n));
+
+    return true;
+}
+
+bool tests_stack() {
+    
+    st stack;
+    st_init(&stack,6);
+
+    st_push(&stack,29);
+    st_push(&stack,9);
+    st_push(&stack,12);
+    st_push(&stack,9);
+    st_push(&stack,20);
+    st_push(&stack,1);
+    st_push(&stack,2);
+
+    printf("top: %d\n",st_peek(stack));
+    st_print(stack);
+
+    st_pop(&stack);
+    st_pop(&stack);
+    
+    st_print(stack);
+    
+    st_pop(&stack);
+    st_pop(&stack);
+    st_pop(&stack);
+    st_pop(&stack);
+
+    st_print(stack);
+    printf("top: %d\n",st_peek(stack));
 
     return true;
 }
